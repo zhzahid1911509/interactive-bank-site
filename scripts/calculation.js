@@ -24,6 +24,15 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
         const newWithdraw = document.getElementById('input_withdraw').value;
         let totalWithdraw = parseFloat(newWithdraw) + parseFloat(previousWithdraw);
         document.getElementById('withdraw_amnt').innerText = totalWithdraw;
+        const previousBalance = document.getElementById('balance_amnt').innerText;
+        if(parseFloat(newWithdraw) > parseFloat(previousBalance)){
+            alert("Your Account Balance has shortage");
+            document.getElementById('withdraw_amnt').innerText = previousWithdraw
+        }
+        else{
+            let totalBalance = parseFloat(previousBalance) - parseFloat(newWithdraw);
+            document.getElementById('balance_amnt').innerText = totalBalance;
+        }
         document.getElementById('input_withdraw').value = "";
     }
     
