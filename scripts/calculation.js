@@ -1,6 +1,6 @@
 document.getElementById('btn-deposit').addEventListener('click', function(){
-    if(document.getElementById('input_deposit').value === ""){
-        alert('Please enter any amount');
+    if(document.getElementById('input_deposit').value === "" || parseFloat(document.getElementById('input_deposit').value)<0){
+        alert('Please enter any valid amount');
     }
     else{
         const previousDeposit = document.getElementById('deposit_amnt').innerText;
@@ -16,8 +16,8 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
 });
 
 document.getElementById('btn-withdraw').addEventListener('click', function(){
-    if(document.getElementById('input_withdraw').value === ""){
-        alert('Please enter any amount');
+    if(document.getElementById('input_withdraw').value === "" || parseFloat(document.getElementById('input_withdraw').value)<0){
+        alert('Please enter any valid amount');
     }
     else{
         const previousWithdraw = document.getElementById('withdraw_amnt').innerText;
